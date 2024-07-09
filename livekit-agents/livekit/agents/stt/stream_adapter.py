@@ -25,9 +25,9 @@ class StreamAdapter(STT):
         stt: STT,
         vad: VAD,
     ) -> None:
-        super().__init__(
-            capabilities=STTCapabilities(streaming=True, interim_results=False)
-        )
+        caps = stt.capabilities.copy()
+        caps.streaming = True
+        super().__init__(capabilities=caps)
         self._vad = vad
         self._stt = stt
 

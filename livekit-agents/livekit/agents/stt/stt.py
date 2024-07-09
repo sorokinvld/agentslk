@@ -44,6 +44,12 @@ class STTCapabilities:
     streaming: bool
     interim_results: bool
 
+    def copy(self) -> STTCapabilities:
+        return STTCapabilities(
+            streaming=self.streaming,
+            interim_results=self.interim_results,
+        )
+
 
 class STT(ABC):
     def __init__(

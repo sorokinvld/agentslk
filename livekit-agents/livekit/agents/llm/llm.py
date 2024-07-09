@@ -71,6 +71,7 @@ class LLMStream(abc.ABC):
         for fnc_info in self._function_calls_info:
             called_fnc = fnc_info.execute()
             self._tasks.add(called_fnc.task)
+            called_fnc.task.add_done_callback(self._tasks.remove)
             called_functions.append(called_fnc)
 
         return called_functions

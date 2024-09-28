@@ -1,5 +1,11 @@
 # livekit-agents
 
+## 0.9.2
+
+### Patch Changes
+
+- silero: support any sample rate - [#805](https://github.com/livekit/agents/pull/805) ([@theomonnom](https://github.com/theomonnom))
+
 ## 0.9.1
 
 ### Patch Changes
